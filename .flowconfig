@@ -17,6 +17,8 @@ node_modules/warning/.*
 
 [untyped]
 .*/node_modules/@react-native-community/cli/.*/.*
+.*/node_modules/react-native/Libraries/Modal/.*
+.*/node_modules/react-native/Libraries/YellowBox/.*/.*
 
 [include]
 
