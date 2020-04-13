@@ -6,18 +6,28 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build:ci": "yarn clean:modules && yarn flow check && yarn test",
+    "clean": "yarn clean:android && yarn clean:ios && yarn clean:modules",
+    "clean:android": "rm -rf android/build && rm -rf android/app/build",
+    "clean:ios": "(rm -rf ios/build && yarn run clean:pod)",
+    "clean:pod": "(cd ios/ && pod deintegrate && pod install)",
+    "clean:modules": "rm -rf node_modules/ && yarn",
+    "link:ios": "(cd ios && pod install)"
   },
   "dependencies": {
     "react": "16.11.0",
     "react-native": "0.62.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
+    "@babel/preset-flow": "^7.9.0",
     "@babel/runtime": "^7.9.2",
     "@react-native-community/eslint-config": "^1.0.0",
     "babel-jest": "^25.2.6",
     "eslint": "^6.8.0",
+    "flow-bin": "0.113.0",
     "jest": "^25.2.7",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-test-renderer": "16.11.0"
