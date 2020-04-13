@@ -8,9 +8,9 @@
     "test": "jest",
     "lint": "eslint .",
     "build:ci": "yarn clean:modules && yarn flow check && yarn test",
-    "clean": "yarn run clean:android && yarn run clean:ios",
-    "clean:android": "rm -rf android/build && rm -rf android/app/build && yarn run clean:modules",
-    "clean:ios": "(rm -rf ios/build && yarn run clean:modules && yarn run clean:pod)",
+    "clean": "yarn clean:android && yarn clean:ios && yarn clean:modules",
+    "clean:android": "rm -rf android/build && rm -rf android/app/build",
+    "clean:ios": "(rm -rf ios/build && yarn run clean:pod)",
     "clean:pod": "(cd ios/ && pod deintegrate && pod install)",
     "clean:modules": "rm -rf node_modules/ && yarn",
     "link:ios": "(cd ios && pod install)"
