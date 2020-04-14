@@ -1,12 +1,12 @@
+// @flow
 import { Dimensions } from 'react-native'
+import colors from './colors'
 
 export default {
   wWidth: Dimensions.get('window').width,
   wHeight: Dimensions.get('window').height,
   color: {
-    primary: '#1FD490',
-    secondary: '#1E2024',
-    white: '#fff',
+    ...colors,
   },
   fontSize: {
     f0: 10,

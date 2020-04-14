@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import { Text, View } from 'react-native'
 import PropTypes from 'prop-types'
@@ -16,7 +17,7 @@ Home.propTypes = {
 }
 
 export default withStyles(({
-  color, wWidth, family, fontSize,
+  color,
 }) => ({
   welcomeText: {
     fontSize: 20,
